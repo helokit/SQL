@@ -1,0 +1,43 @@
+#In this project, you’re going to make your own table with some small set of “famous people”, 
+then make more tables about things they do and join those to create nice human readable lists.
+
+For example, here are types of famous people and the questions your data could answer:
+
+Movie stars: What movies are they in? Are they married to each other?
+Singers: What songs did they write? Where are they from?
+Authors: What books did they write?
+Fictional characters: How are they related to other characters? What books do they show up in?# 
+
+/* Create table about the people and what they do here */
+CREATE TABLE singers (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT,
+    age INTEGER,
+    awards TEXT);
+    
+INSERT INTO singers (fullname, age, awards) VALUES ("JB", 24, "MTV");
+INSERT INTO singers (fullname, age, awards) VALUES ("JHK", 62, "US");
+INSERT INTO singers (fullname, age, awards) VALUES ("Jesstine", 27, "Cecelilai");
+INSERT INTO singers (fullname, age, awards) VALUES ("Heyliluly", 18, "Billboard");
+INSERT INTO singers (fullname, age, awards) VALUES ("Mark Tuan", 33, "MAMA");
+
+CREATE TABLE singers_popularity (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    net_worth INTEGER,
+    labels TEXT,
+    source_wealth TEXT);
+    
+INSERT INTO singers_popularity (net_worth,labels, source_wealth) VALUES ( "112 billion", "real estae");
+INSERT INTO singers_popularity (net_worth,labels, source_wealth) VALUES ("90 billion", "investment");
+INSERT INTO singers_popularity (net_worth, labels, source_wealth) VALUES ("84 billion", "gameshow");
+INSERT INTO singers_popularity (net_worth, labels, source_wealth) VALUES ("72 billion", "brands endorsement/ fashion");
+INSERT INTO singers_popularity (net_worth, labels, source_wealth) VALUES ("71 billion", "modelling, acting");
+
+SELECT singers.fullname, singers_popularity.net_worth
+FROM singers
+JOIN singers_popularity
+ON singers.id = singers_popularity.id;
+
+
+
+ 

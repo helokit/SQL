@@ -1,0 +1,23 @@
+/* What does the app's SQL look like? */
+
+CREATE TABLE salary_tracking (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    position TEXT,
+    department TEXT,
+   salary INTEGER);
+   
+INSERT INTO salary_tracking (position, department, salary) VALUES ("Manager", "PR", 150000);
+INSERT INTO salary_tracking (position, department, salary) VALUES ("Associate", "IT", 250000);
+INSERT INTO salary_tracking (position, department, salary) VALUES ("VP", "marketing", 1000000);
+INSERT INTO salary_tracking (position, department, salary)  VALUES ("Director", "products", 4000000);
+Select * from salary_tracking;
+
+UPDATE salary_tracking SET department = "Manage resources"
+where id = 1; 
+ 
+ Select * from salary_tracking;
+
+DELeTe from salary_tracking where id=1;
+ Select * from salary_tracking;
+
+

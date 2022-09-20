@@ -1,0 +1,24 @@
+Context:
+The world population is projected to hit 8 billion this year. 
+We’ve provided a dataset with population information for 234 countries/territories.
+We’ve processed it a tiny bit to make some operations easier. 
+Each row contains information about a country: its capital, land area, population density, and 
+raw population counts over 10-year intervals starting at 1970.
+
+
+Notes:
+- The dataset provided was taken from Kaggle. 
+
+1. According to the data, which country had the highest population in 1980? What was its exact unrounded population? Explain how you got your answer.
+SELECT Country, MAX("1980 Population") FROM BIT_DB.Worldpopulation;
+
+2. According to the data, what was the exact unrounded world population in 1980? Explain how you got your answer.
+SELECT SUM("1980 Population") FROM BIT_DB.Worldpopulation;
+
+3. According to the data, which country has the longest capital name (including spaces)? What’s the name of its capital? Explain how you got your answer.
+SELECT Country, Capital FROM BIT_DB.Worldpopulation
+ORDER BY length (Capital) DESC;
+ 
+4. According to the data, what is the average population density of countries which start with the letter “a” in 2022? 
+SELECT AVG("Density (per km²)") FROM BIT_DB.Worldpopulation
+WHERE Country LIKE 'a%';
